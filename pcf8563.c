@@ -196,8 +196,6 @@ pcf8563_err_t pcf8563_ioctl(const pcf8563_t *pcf, int16_t command, void *buffer)
                     pcf->handle, PCF8563_ADDRESS, reg, data, PCF8563_ALARM_SIZE
                     );
 
-            break;
-
         case PCF8563_ALARM_READ:
             time = (struct tm *) buffer;
 
@@ -242,7 +240,6 @@ pcf8563_err_t pcf8563_ioctl(const pcf8563_t *pcf, int16_t command, void *buffer)
             }
 
             return PCF8563_OK;
-            break;
 
         case PCF8563_CONTROL_STATUS1_READ:
         case PCF8563_CONTROL_STATUS2_READ:
@@ -251,7 +248,6 @@ pcf8563_err_t pcf8563_ioctl(const pcf8563_t *pcf, int16_t command, void *buffer)
             return pcf->read(
                     pcf->handle, PCF8563_ADDRESS, reg, (uint8_t *) buffer, 1
                     );
-            break;
 
         case PCF8563_CONTROL_STATUS1_WRITE:
         case PCF8563_CONTROL_STATUS2_WRITE:
@@ -260,7 +256,6 @@ pcf8563_err_t pcf8563_ioctl(const pcf8563_t *pcf, int16_t command, void *buffer)
             return pcf->write(
                     pcf->handle, PCF8563_ADDRESS, reg, (uint8_t *) buffer, 1
                     );
-            break;
 
     }
 
