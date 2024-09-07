@@ -46,7 +46,7 @@ static inline uint8_t bcd2decimal(uint8_t bcd) {
 
 pcf8563_err_t pcf8563_init(const pcf8563_t *pcf) {
     uint8_t clear = 0x00;
-    int32_t status;
+    uint8_t status;
 
     status = pcf->write(pcf->handle, PCF8563_ADDRESS, PCF8563_CONTROL_STATUS1, &clear, 1);
     if (PCF8563_OK != status) {
